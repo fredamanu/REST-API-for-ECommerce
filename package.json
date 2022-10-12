@@ -40,7 +40,15 @@
     "mongoose": "^5.11.15",
     "passport-google-id-token": "^0.4.7",
     "stripe": "^10.6.0",
-    "winston": "^3.2.1"
+    "winston": "^3.2.1",
+    "eslint": "^6.8.0",
+    "jest": "^26.6.3",
+    "nodemon": "^1.19.4",
+    "passport": "^0.6.0",
+    "supertest": "^4.0.2",
+    "ts-jest": "^26.5.6",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.8.2"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
@@ -58,14 +66,7 @@
     "@types/winston": "^2.4.4",
     "@typescript-eslint/eslint-plugin": "^2.21.0",
     "@typescript-eslint/parser": "^2.21.0",
-    "eslint": "^6.8.0",
-    "jest": "^26.6.3",
-    "nodemon": "^1.19.4",
-    "passport": "^0.6.0",
-    "supertest": "^4.0.2",
-    "ts-jest": "^26.5.6",
-    "ts-node": "^8.6.2",
-    "typescript": "^3.8.2"
+   
   },
   "husky": {
     "hooks": {
