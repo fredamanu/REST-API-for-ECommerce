@@ -1,3 +1,4 @@
+// @ts-nocheck
 import errorHandler from 'errorhandler'
 import mongoose from 'mongoose'
 
