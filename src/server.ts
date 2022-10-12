@@ -1,5 +1,4 @@
-// @ts-nocheck
-import errorHandler from 'errorhandler'
+// import errorHandler from 'errorhandler'
 import mongoose from 'mongoose'
 
 import app from './app'
@@ -30,9 +29,9 @@ mongoose
  * Error Handler. Provides error handing middleware
    only use in development
  */
-if (process.env.NODE_ENV === 'development') {
-  app.use(errorHandler())
-}
+// if (process.env.NODE_ENV === 'development') {
+//   app.use(errorHandler())
+// }
 
 // Start Express server
 app.listen(process.env.PORT || 5000, () => {
