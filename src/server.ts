@@ -34,7 +34,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // Start Express server
-app.listen(app.get('port'), () => {
+app.listen(process.env.PORT || 5000, () => {
   console.log(
     '  App is running at http://localhost:%d in %s mode',
     app.get('port'),
