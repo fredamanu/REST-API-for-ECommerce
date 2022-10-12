@@ -2,11 +2,14 @@
   "name": "express-typescript-starter",
   "version": "0.1.0",
   "description": "A starting point for Node.js express apps with TypeScript",
+  "engines": {
+    "node": "16.17.1"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Microsoft/TypeScript-Node-Starter"
   },
-  "author": "Bowden Kelly",
+  "author": "Freda Manu",
   "license": "MIT",
   "scripts": {
     "start:prod": "node dist/src/server.js",
