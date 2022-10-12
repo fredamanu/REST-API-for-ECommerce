@@ -42,3 +42,14 @@ app.listen(process.env.PORT || 5000, () => {
   )
   console.log('  Press CTRL-C to stop\n')
 })
+
+
+// "scripts": {
+//   "start:prod": "node dist/src/server.js",
+//   "start:dev": "nodemon src/server.ts",
+//   "build": "tsc",
+//   "watch-ts": "tsc -w",
+//   "test": "jest --forceExit --detectOpenHandles --coverage --verbose false",
+//   "watch-test": "npm run test -- --watchAll",
+//   "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix"
+// },
