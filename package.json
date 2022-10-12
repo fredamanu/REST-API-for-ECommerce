@@ -26,7 +26,7 @@
     "@types/lusca": "^1.7.0",
     "@types/passport-google-id-token": "^0.4.0",
     "@types/stripe": "^8.0.417",
-    "bcrypt": "^5.1.0",
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "errorhandler": "^1.5.1",
