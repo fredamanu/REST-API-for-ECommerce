@@ -14,7 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const User_1 = __importDefault(require("../models/User"));
 const apiError_1 = require("../helpers/apiError");
-const bcrypt_1 = __importDefault(require("bcrypt"));
+const bcryptjs_1 = __importDefault(require("bcryptjs"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const secrets_1 = require("../util/secrets");
 const findOrCreateUsingRegister = (user) => __awaiter(void 0, void 0, void 0, function* () {
@@ -49,7 +49,7 @@ const findUserByEmail = (user) => __awaiter(void 0, void 0, void 0, function* ()
         throw new apiError_1.NotFoundError(`user ${user.email} not found`);
     }
     else {
-        const match = yield bcrypt_1.default.compare(user.password, foundUser.password);
+        const match = yield bcryptjs_1.default.compare(user.password, foundUser.password);
         if (match === true) {
             const token = jsonwebtoken_1.default.sign({ email: foundUser.email, id: foundUser._id }, secrets_1.JWT_SECRET);
             return { foundUser, token };

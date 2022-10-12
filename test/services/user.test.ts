@@ -1,4 +1,4 @@
-import bcrypt from 'bcrypt'
+import bcrypt from 'bcryptjs'
 import User, { UserDocument } from '../../src/models/User'
 import UserServices from '../../src/services/user'
 import connect, { MongodHelper } from '../db-helper'

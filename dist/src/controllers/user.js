@@ -14,12 +14,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteUser = exports.updateUser = exports.findUserByEmail = exports.findUserById = exports.findAllUsers = exports.findOrCreateUserUsingRegister = void 0;
 const User_1 = __importDefault(require("../models/User"));
-const bcrypt_1 = __importDefault(require("bcrypt"));
+const bcryptjs_1 = __importDefault(require("bcryptjs"));
 const user_1 = __importDefault(require("../services/user"));
 const apiError_1 = require("../helpers/apiError");
 exports.findOrCreateUserUsingRegister = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const hash = yield bcrypt_1.default.hash(req.body.password, 10);
+        const hash = yield bcryptjs_1.default.hash(req.body.password, 10);
         const { firstName, lastName, email } = req.body;
         const user = new User_1.default({
             firstName,

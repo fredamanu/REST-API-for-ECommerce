@@ -1,4 +1,4 @@
-import bcrypt from 'bcrypt'
+import bcrypt from 'bcryptjs'
 import OrderServices from '../../src/services/order'
 import UserServices from '../../src/services/user'
 import User from '../../src/models/User'

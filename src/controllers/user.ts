@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express'
 import User from '../models/User'
-import bcrypt from 'bcrypt'
+import bcrypt from 'bcryptjs'
 
 import UserServices from '../services/user'
 import { BadRequestError } from '../helpers/apiError'

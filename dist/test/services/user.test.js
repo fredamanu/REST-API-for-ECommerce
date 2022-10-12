@@ -12,13 +12,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const bcrypt_1 = __importDefault(require("bcrypt"));
+const bcryptjs_1 = __importDefault(require("bcryptjs"));
 const User_1 = __importDefault(require("../../src/models/User"));
 const user_1 = __importDefault(require("../../src/services/user"));
 const db_helper_1 = __importDefault(require("../db-helper"));
 const nonExistingUserId = '5e57b77b5744fa0b461c7906';
 const findOrCreateUser = () => __awaiter(void 0, void 0, void 0, function* () {
-    const hash = yield bcrypt_1.default.hash('gh793jgdjs', 10);
+    const hash = yield bcryptjs_1.default.hash('gh793jgdjs', 10);
     const newUser = new User_1.default({
         firstName: 'Freda',
         lastName: 'Manu',
