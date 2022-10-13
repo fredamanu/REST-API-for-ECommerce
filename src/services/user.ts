@@ -1,5 +1,5 @@
 import User, { UserDocument } from '../models/User'
-import { NotFoundError } from '../helpers/apiError'
+import { BadRequestError, NotFoundError } from '../helpers/apiError'
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 import { JWT_SECRET } from '../util/secrets'
@@ -11,8 +11,7 @@ const findOrCreateUsingRegister = async (user: UserDocument) => {
     const newUser = await user.save()
     return newUser
   }
-
-  return foundUser
+  throw new BadRequestError("user already exist")
 }
 
 const findOrCreate = async (user: UserDocument) => {
