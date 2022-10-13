@@ -11,7 +11,7 @@ const findOrCreateUsingRegister = async (user: UserDocument) => {
     const newUser = await user.save()
     return newUser
   }
-  throw new BadRequestError("user already exist")
+  throw new BadRequestError('user already exist')
 }
 
 const findOrCreate = async (user: UserDocument) => {
@@ -38,11 +38,13 @@ const findUserById = async (userId: string): Promise<UserDocument> => {
 const findUserByEmail = async (user: UserDocument): Promise<UserDocument> => {
   const foundUser = await User.findOne({ email: user.email })
   if (!foundUser) {
-    throw new NotFoundError("user does not exist")
+    throw new NotFoundError('user does not exist')
+  } else if (foundUser.password === "" || foundUser.password === null || foundUser.password === undefined) {
+    throw new BadRequestError('no password')
   } else {
     const match = await bcrypt.compare(user.password, foundUser.password)
     if (match === true) {
-      return  foundUser
+      return foundUser
     }
     throw new NotFoundError('password is incorrect')
   }
