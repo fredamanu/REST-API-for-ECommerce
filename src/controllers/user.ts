@@ -11,15 +11,18 @@ export const findOrCreateUserUsingRegister = async (
   next: NextFunction
 ) => {
   try {
-    const hash = await bcrypt.hash(req.body.password, 10)
-    const { firstName, lastName, email } = req.body
-    const user = new User({
-      firstName,
-      lastName,
-      email,
-      password: hash,
-    })
-    res.json(await UserServices.findOrCreateUsingRegister(user))
+    // const hash = await bcrypt.hash(req.body.password, 10)
+    // const { firstName, lastName, email } = req.body
+    // const user = new User({
+    //   firstName,
+    //   lastName,
+    //   email,
+    //   password: hash,
+    // })
+    console.log(req.body)
+    res.json({message: "received"})
+    
+    // res.json(await UserServices.findOrCreateUsingRegister(user))
   } catch (error) {
     if (error instanceof Error && error.name == 'ValidationError') {
       next(new BadRequestError('Invalid Request', error))
