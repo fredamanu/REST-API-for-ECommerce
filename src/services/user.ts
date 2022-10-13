@@ -35,23 +35,14 @@ const findUserById = async (userId: string): Promise<UserDocument> => {
   return foundUser
 }
 
-const findUserByEmail = async (
-  user: UserDocument
-): Promise<{
-  foundUser: UserDocument
-  token: string
-}> => {
+const findUserByEmail = async (user: UserDocument): Promise<UserDocument> => {
   const foundUser = await User.findOne({ email: user.email })
   if (!foundUser) {
-    throw new NotFoundError(`user ${user.email} not found`)
+    throw new NotFoundError("user does not exist")
   } else {
     const match = await bcrypt.compare(user.password, foundUser.password)
     if (match === true) {
-      const token = jwt.sign(
-        { email: foundUser.email, id: foundUser._id },
-        JWT_SECRET
-      )
-      return { foundUser, token }
+      return  foundUser
     }
     throw new NotFoundError('password is incorrect')
   }

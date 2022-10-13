@@ -70,6 +70,7 @@ export const findUserByEmail = async (
   next: NextFunction
 ) => {
   try {
+
     res.json(await UserServices.findUserByEmail(req.body))
   } catch (error) {
     if (error instanceof Error && error.name == 'ValidationError') {
