@@ -5,20 +5,14 @@ import jwt from 'jsonwebtoken'
 import { JWT_SECRET } from '../util/secrets'
 
 const findOrCreateUsingRegister = async (user: UserDocument) => {
+  console.log(user)
   const foundUser = await User.findOne({ email: user.email })
   if (!foundUser) {
-    const foundUser = await user.save()
-    const token = jwt.sign(
-      { email: foundUser.email, id: foundUser._id },
-      JWT_SECRET
-    )
-    return { foundUser, token }
+    const newUser = await user.save()
+    return newUser
   }
-  const token = jwt.sign(
-    { email: foundUser.email, id: foundUser._id },
-    JWT_SECRET
-  )
-  return { foundUser, token }
+
+  return foundUser
 }
 
 const findOrCreate = async (user: UserDocument) => {

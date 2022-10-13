@@ -12,15 +12,15 @@ export const findOrCreateUserUsingRegister = async (
 ) => {
   try {
     // const hash = await bcrypt.hash(req.body.password, 10)
-    // const { firstName, lastName, email } = req.body
-    // const user = new User({
-    //   firstName,
-    //   lastName,
-    //   email,
-    //   password: hash,
-    // })
-    console.log(req.body)
-    res.json({message: "received"})
+    const { firstName, lastName, email, password } = req.body
+    const user = new User({
+      firstName,
+      lastName,
+      email,
+      password
+    })
+    
+    res.json(await UserServices.findOrCreateUsingRegister(user))
     
     // res.json(await UserServices.findOrCreateUsingRegister(user))
   } catch (error) {
